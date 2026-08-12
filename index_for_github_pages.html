@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>برهان × نور ❤️</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Tahoma,Arial,sans-serif;color:#fff;background:radial-gradient(circle at 20% 5%,#702343,transparent 35%),radial-gradient(circle at 90% 20%,#412052,transparent 35%),linear-gradient(145deg,#0b0710,#21101d 55%,#09060c);min-height:100vh}
+button{font:inherit}.hidden{display:none!important}
+.screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:22px}
+.box,.card{width:min(900px,94%);background:rgba(255,255,255,.065);border:1px solid rgba(255,255,255,.13);border-radius:28px;backdrop-filter:blur(14px);box-shadow:0 25px 80px #0008}
+.box{width:min(570px,100%);padding:30px 22px;text-align:center}.card{padding:28px 22px;margin:22px auto}
+.heart{font-size:70px;text-align:center;animation:pulse 1.5s infinite}@keyframes pulse{50%{transform:scale(1.1)}}
+h1{text-align:center;font-size:clamp(34px,8vw,58px);margin:10px 0}h2{text-align:center;color:#ff9fba}
+.muted{color:#d9b8c5;line-height:1.9}.question{font-size:23px;font-weight:bold;margin:25px 0 18px}
+.options{display:grid;gap:11px}.option,.mainbtn{border:0;border-radius:17px;padding:15px;color:#fff;background:linear-gradient(135deg,#b63d6b,#713052);cursor:pointer;box-shadow:0 8px 22px #0004}
+.error{margin-top:16px;padding:14px;border-radius:17px;background:#ff507d18;border:1px solid #ff9ab633;line-height:1.8}.sticker{font-size:46px;display:block}
+.progress{height:6px;background:#ffffff12;border-radius:9px;margin-top:22px;overflow:hidden}.progress i{display:block;height:100%;background:#ff87a9;width:0;transition:.3s}
+#heartStage{display:none}.bigheart{font-size:145px;text-align:center;cursor:pointer;animation:pulse 1.2s infinite}.tap{text-align:center;color:#f0bfd0}
+.hero{text-align:center;padding:55px 0 15px}.hero .date{color:#e6b3c6}.quote{font-size:19px;color:#ffd9e5;line-height:2;text-align:center}
+.message{font-size:18px;line-height:2.15;color:#f6e7ee}.memory{padding:18px;border-radius:19px;background:#ffffff09;margin:12px 0;line-height:1.9}.memory b{display:block;color:#ffb0c7;margin-bottom:5px}
+.counter{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.time{text-align:center;background:#ffffff0a;padding:15px 5px;border-radius:16px}.time b{display:block;font-size:29px;color:#ff9fba}.time span{font-size:12px;color:#d0b3c0}
+.changing{text-align:center;color:#ffd6e2;min-height:65px;line-height:1.9;font-size:19px;transition:.3s}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.gallery img{width:100%;height:250px;object-fit:cover;border-radius:19px;border:1px solid #ffffff22}
+.secret{display:none;padding:18px;margin-top:18px;border-radius:18px;background:#ffffff09;line-height:2}
+footer{text-align:center;color:#9d7e8c;padding:30px 0 55px}
+@media(max-width:600px){.counter{grid-template-columns:repeat(2,1fr)}.gallery{grid-template-columns:1fr}.gallery img{height:300px}.message{font-size:16px}}
+</style>
+</head>
+<body>
+
+<section id="gate" class="screen">
+<div class="box">
+<div id="quiz">
+<div class="heart">❤️</div>
+<h1>قبل لا تدخلين...</h1>
+<p class="muted">عندي كم سؤال صغير إلكِ يا أميرتي.<br>جاوبيهم حتى أفتح لج المكان اللي سويته إلچ.</p>
+<div id="qnum" class="muted"></div>
+<div id="question" class="question"></div>
+<div id="options" class="options"></div>
+<div id="error"></div>
+<div class="progress"><i id="bar"></i></div>
+</div>
+
+<div id="heartStage">
+<div class="heart">🥹❤️</div>
+<h1>أصلاً...</h1>
+<p class="quote">إنتِ دخلتي قلبي بدون استئذان.</p>
+<p class="muted">ولهذا خليت القلب هو المفتاح.</p>
+<div class="bigheart" onclick="openHome()">❤️</div>
+<div class="tap">اضغطي على القلب حتى تدخلين ❤️</div>
+</div>
+</div>
+</section>
+
+<main id="main" class="hidden">
+<header class="hero">
+<div class="heart">❤️</div>
+<h1>برهان × نور</h1>
+<div class="date">15 / 04 / 2026 — الساعة 4:41 فجراً</div>
+<p class="quote">هاي مو صفحة يحچي بيها الموقع... هاي أنا جاي أحچي إلچ.</p>
+</header>
+
+<section class="card">
+<h2>⏳ من يوم تعارفنا إلى هسه</h2>
+<div class="counter">
+<div class="time"><b id="days">0</b><span>يوم</span></div>
+<div class="time"><b id="hours">0</b><span>ساعة</span></div>
+<div class="time"><b id="mins">0</b><span>دقيقة</span></div>
+<div class="time"><b id="secs">0</b><span>ثانية</span></div>
+</div>
+<p id="changing" class="changing">من ذاك اليوم وكل ثانية إلها معنى لأنچ وياي. ❤️</p>
+</section>
+
+<section class="card">
+<h2>📩 من هنا بدأ كلشي</h2>
+<p class="message">
+نور، أتذكر أول اعتراف مني إلچ؟<br><br>
+<strong>«انا بريدك بس انتي ما جاي تحسي🙂»</strong><br><br>
+يمكن كانت مجرد رسالة بوقتها، بس بالنسبة إلي صارت بداية حكاية ما أريد أنساها.
+</p>
+</section>
+
+<section class="card">
+<h2>🕰️ ذكرياتنا</h2>
+<div class="memory"><b>❤️ أول اعتراف</b>أول رسالة مني إلچ كانت «انا بريدك بس انتي ما جاي تحسي🙂».</div>
+<div class="memory"><b>😂 ألقابنا</b>إنتِ تناديني «برهاني» و«تيس»، وأنا أناديچ «أميرتي» و«عنز» و«بزونتي».</div>
+<div class="memory"><b>🎵 إذا ناوي تروح</b>الأغنية اللي أغنيها إلچ واللي تحبينها جثير، وصارت إلها مكان خاص بينا.</div>
+<div class="memory"><b>👗 يوم اختاريتيلي الملابس</b>من الذكريات اللي أحبها لأنچ كنتِ جزء من تفاصيل يومي واختاريتيلي الملابس.</div>
+<div class="memory"><b>🌙 مكالماتنا</b>أحب إننا ما ننام إذا ما كان الاتصال مفتوح بينا، وصارت هاي من التفاصيل اللي أرتاح إلها.</div>
+<div class="memory"><b>🥹 التفاصيل الصغيرة</b>ضحكتچ، حچيچ، «هئ»، «برهاني»، والحركة اللي تسوينها بشفتچ واللي أذوب بيها.</div>
+</section>
+
+<section class="card">
+<h2>❤️ أشياء أحبها بيچ</h2>
+<p class="message">
+أحب ضحكتچ، أحب حچيچ، أحب الكلمات اللي تقولينها، أحب ذكاءچ ومواضيعچ، وأحب صوتچ حتى من غير ما تحچين بشي.
+<br><br>
+وأحب كلشي بيچ... مو لأن عندي قائمة محددة، بس لأن كل مرة أحاول أختار شغلة أتذكر شغلة ثانية وأگول: هاي هم أعشقها.
+</p>
+</section>
+
+<section class="card">
+<h2>📸 صورنا</h2>
+<p class="muted" style="text-align:center">كل صورة هنا إلها ذكرى خاصة عندي ❤️</p>
+<div class="gallery">
+<img src="photo1.jpg" alt="ذكرى 1">
+<img src="photo2.png" alt="ذكرى 2">
+<img src="photo3.jpg" alt="ذكرى 3">
+<img src="photo4.jpg" alt="ذكرى 4">
+</div>
+</section>
+
+<section class="card">
+<h2>💌 من قلبي إلچ</h2>
+<p class="message">
+نور،<br><br>
+ما أعرف إذا أگدر أختصر كلشي أحسه بكلام، بس أعرف إن تاريخ 15/4/2026، الساعة 4:41 الفجر، صار تاريخ مختلف عندي.
+<br><br>
+من أول رسالة، إلى سوالفنا، إلى ألقابنا، إلى الضحكات والمكالمات والتفاصيل الصغيرة... كلشي صار جزء من ذكرياتي.
+<br><br>
+إنتِ مو مجرد شخص أعرفه؛ إنتِ صرتِ من التفاصيل اللي وجودها يفرق وياي.
+<br><br>
+أحب ضحكتچ، حچيچ، ذكاءچ، مواضيعچ، صوتچ، وطريقة وجودچ بكل التفاصيل الصغيرة.
+<br><br>
+وإذا سألتي شنو أكثر شي أحبه بيچ؟
+<strong>كلشي بيچ. ❤️</strong>
+<br><br>
+وأريدچ تعرفين إن هاي الصفحة كلها مجرد طريقة صغيرة حتى أخلي جزء من اللي بداخلي قدامج.
+<br><br>
+عيد تعارف سعيد يا نور ❤️
+<br><br>
+— برهان
+</p>
+</section>
+
+<section class="card">
+<h2>🔐 آخر شي</h2>
+<button class="mainbtn" onclick="showSecret()">افتحي الرسالة الأخيرة ❤️</button>
+<div id="secret" class="secret">
+أصلاً إنتِ دخلتي قلبي بدون استئذان... ولهذا مهما كتبت، أحس الكلام يبقى أقل من اللي أريد أوصله إلچ. ❤️
+</div>
+</section>
+
+<footer>برهان × نور ❤️<br><small>15 أبريل 2026 • 4:41 AM</small></footer>
+</main>
+
+<script>
+const questions=[
+{q:"نور... تحبيني؟ ❤️",a:["أكيد أحبك ❤️","شوي 😌","لااا 😂","ما أدري 🤭"],correct:0},
+{q:"طيب شكد تحبيني؟ 🥹",a:["شوية","هواي","هواي هواي","أكثر مما أگدر أوصف ❤️"],correct:3},
+{q:"يعني أكيد تحبيني؟ 👀❤️",a:["أكيد ❤️","أكيد أكيد ❤️❤️","شنو هالسؤال؟ 😂","بعدك تشك؟ 😭"],correct:3},
+{q:"شنو أول رسالة بينا؟ 📩",a:["شلونچ؟","«انا بريدك بس انتي ما جاي تحسي🙂»","صباح الخير","اشتقتلچ"],correct:1},
+{q:"شنو الألقاب اللي إنتِ تناديني بيها؟ 😂",a:["برهاني وتيس","أميرتي وبزونتي","عنز وبزونتي","نور وبرهان"],correct:0},
+{q:"شنو الألقاب اللي أناديچ بيها؟ ❤️",a:["برهاني وتيس","أميرتي وعنزي وبزونتي","نورتي فقط","حبيبتي فقط"],correct:1},
+{q:"شنو الحركة اللي تسوينها بشفتچ وأذوب بيها؟ 🥹",a:["حركة بشفتچ","تضحكين","تغمضين عينچ","تسوين نفسچ زعلانة"],correct:0},
+{q:"شنو أكثر شي أحبّه بيچ؟ ❤️",a:["ضحكتچ","صوتچ","ذكاءچ","كلشي بيچ ❤️"],correct:3},
+{q:"شنو الأغنية اللي تحبين أغنيلچ إياها؟ 🎵",a:["إذا ناوي تروح","أجمل عيون بالكون","أغنية ثانية","ما أحب تغنيلي 😂"],correct:0},
+{q:"متى بدأت حكايتنا؟ 📅",a:["15/4/2026 — الساعة 4:41 الفجر","15/5/2026","14/4/2026","20/4/2026"],correct:0}
+];
+
+let qi=0;
+const question=document.getElementById("question"),options=document.getElementById("options"),error=document.getElementById("error"),qnum=document.getElementById("qnum"),bar=document.getElementById("bar");
+
+function render(){
+ qnum.textContent=`السؤال ${qi+1} من ${questions.length}`;
+ question.textContent=questions[qi].q;
+ options.innerHTML="";
+ error.innerHTML="";
+ questions[qi].a.forEach((text,i)=>{
+  const b=document.createElement("button");
+  b.className="option";b.textContent=text;b.onclick=()=>answer(i);options.appendChild(b);
+ });
+ bar.style.width=(qi/questions.length*100)+"%";
+}
+function answer(i){
+ if(i!==questions[qi].correct){
+  error.innerHTML='<div class="error"><span class="sticker">🥺👉👈</span><b>من فضلك أميرتي اختاري الإجابة الصحيحة يلا 😭❤️</b></div>';
+  return;
+ }
+ qi++;
+ if(qi<questions.length)render();
+ else{
+  bar.style.width="100%";
+  document.getElementById("quiz").classList.add("hidden");
+  document.getElementById("heartStage").style.display="block";
+ }
+}
+function openHome(){
+ document.getElementById("gate").style.display="none";
+ document.getElementById("main").classList.remove("hidden");
+ window.scrollTo(0,0);
+}
+function showSecret(){document.getElementById("secret").style.display="block"}
+
+const start=new Date("2026-04-15T04:41:00+03:00");
+function updateCounter(){
+ const total=Math.max(0,new Date()-start),s=Math.floor(total/1000);
+ document.getElementById("days").textContent=Math.floor(s/86400);
+ document.getElementById("hours").textContent=Math.floor((s%86400)/3600);
+ document.getElementById("mins").textContent=Math.floor((s%3600)/60);
+ document.getElementById("secs").textContent=s%60;
+}
+updateCounter();setInterval(updateCounter,1000);
+
+const lines=[
+"من ذاك اليوم وكل ثانية إلها معنى لأنچ وياي. ❤️",
+"كل ما يزيد العداد، تزيد قيمة الأيام اللي عشتها وأنا أعرفچ. 🌷",
+"مو المهم شكد مر من الوقت... المهم شكد صار بيه من لحظات حلوة. ❤️",
+"نور، وجودچ صار من التفاصيل اللي ما أريد أخسرها. 🥹",
+"وهذي مجرد بداية لحكاية بعدها بيها هواي صفحات. ❤️"
+];
+let li=0;
+setInterval(()=>{
+ li=(li+1)%lines.length;
+ const el=document.getElementById("changing");
+ el.style.opacity=0;
+ setTimeout(()=>{el.textContent=lines[li];el.style.opacity=1},300);
+},5000);
+</script>
+</body>
+</html>
